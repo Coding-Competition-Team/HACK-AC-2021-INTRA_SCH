@@ -1,0 +1,5 @@
+This mac wasn't as small as I thought it would be... What's a mac? I think it's mono something something...
+
+Note: If you manage to bruteforce the flag, maybe scan through the ciphertext for any errors?
+
+Author: Lucas

@@ -1,0 +1,3 @@
+Our logistics department tried to order ice cream from an ice cream vendor, but their machines were compromised. Our investigation team dumped the pcap traffic for one of the machines. Go have a look.
+
+Author: Samuel

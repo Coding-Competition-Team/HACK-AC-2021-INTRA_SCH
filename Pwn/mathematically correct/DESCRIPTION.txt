@@ -1,0 +1,9 @@
+Alice is really bad at math, but Bob keeps asking her these hard questions. Can you help Alice and Bob with these totally possible equations?
+
+`nc 178.128.85.118 37331`
+
+Mirror:
+
+`nc 165.232.173.222 37331`
+
+Author: Lam

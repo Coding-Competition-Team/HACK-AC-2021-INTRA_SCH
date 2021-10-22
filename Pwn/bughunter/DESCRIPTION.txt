@@ -1,0 +1,9 @@
+Alice and Bob, while testing out their new symmetric key encryption, messed up some stuff on Eve's computer. Can you help Eve debug her PC?
+
+`nc 178.128.85.118 31337`
+
+Mirror:
+
+`nc 165.232.173.222 31337`
+
+Author: Lam

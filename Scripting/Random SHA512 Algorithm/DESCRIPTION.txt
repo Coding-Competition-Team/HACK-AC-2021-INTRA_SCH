@@ -1,0 +1,6 @@
+hmm got this funny looking thing, i happen to know how its generated too. (python btw)
+a seed of 3 was chosen. looping i 1 through 10000 inclusive, a random integer was chosen from 1 to i, and hashed using sha512.
+
+...i wonder if there are any anomalies?
+
+Author: Lucas

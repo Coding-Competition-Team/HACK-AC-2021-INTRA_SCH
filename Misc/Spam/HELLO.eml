@@ -1,0 +1,92 @@
+Delivered-To: thunderphoenix380@gmail.com
+Received: by 2002:a05:600c:3043:0:0:0:0 with SMTP id n3csp320201wmh;
+        Thu, 2 Sep 2021 04:47:15 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyrd/oagQrRHWFGwgXmcE8KD3ek/KCC9MUQLS8AMIZ0vC985ime5NKqOA6fTA6B9nz6eej5
+X-Received: by 2002:adf:9e43:: with SMTP id v3mr3170698wre.274.1630583235640;
+        Thu, 02 Sep 2021 04:47:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1630583235; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZIhfFb5oVtSceUMaDr6hDwK76XY2TAqA3HkM06mrxxwem3UGbnhXs8g0jWfVunKeGa
+         MOjDUW5Z32FJwYypSmU8Wz+3M/E4ArUbPBPPQGxAUdmP11wkEaOnRt7tZIkQuo3M0zk5
+         sr4is46G6N7f33q3UE2eIWBskrUJKQx9nABfuZRSHqFH9rLmaybrHm1Rq4wtNtTFLacz
+         KQoScBBfq0q2e8OPwmGyUrWbAppZ++GYSCXSfNS+XZ75TN/2QYndNImvterY/Y14SKsp
+         EbMfcnoJASyRgWubFDIPngVpwISsyIQ73+yqg+gZPZ82QSvkeSRkJ+oGU/avJebWByFC
+         IaCw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=dkim-signature:content-transfer-encoding:subject:from:to:date
+         :message-id:mime-version;
+        bh=5tKi+k1GJLnzMot3yPo4eVlCHrSsiY+rvd39012NORQ=;
+        b=Te/7g0lX5wghd0FL9SoZ/I/uFH/XKzBxDygfG0SMVUXP0n29JIPQdCZAGymejH1urf
+         jPZ8+G5rQPoeyR0+GJqeBebhfiDzO60SJClKLV4hGpd/bpLRaLHYF9oTYAgbKLUKXMh+
+         DhIgx0rB06HBJThCvmkQ+IHGMJg9Laqsmu6f/yqGIe4d2TM05phZ36alSqTRHPK/hse9
+         /hNJNp16RuQ6Dfp9xAnrmd0ofjxvyMkwVtJjL2ir+qHCCJo0oWzNGFE95r6Q2OWOzr5Z
+         ebDitPhmnEjwl6zFjUV60dgbTWk3cEp+veUcKfsi/1KRKYyCUNKJcv0QEcMFYktCQ71B
+         R0PA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@guerrillamail.com header.s=highgrade header.b=GCZX1Rd+;
+       spf=pass (google.com: domain of padxzo+9o4ij921zwlro@guerrillamail.com designates 2a01:4f8:251:657::2 as permitted sender) smtp.mailfrom=padxzo+9o4ij921zwlro@guerrillamail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=guerrillamail.com
+Return-Path: <padxzo+9o4ij921zwlro@guerrillamail.com>
+Received: from mail.guerrillamail.com (mail.guerrillamail.com. [2a01:4f8:251:657::2])
+        by mx.google.com with ESMTPS id h25si1764863wmb.138.2021.09.02.04.47.15
+        for <thunderphoenix380@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 02 Sep 2021 04:47:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of padxzo+9o4ij921zwlro@guerrillamail.com designates 2a01:4f8:251:657::2 as permitted sender) client-ip=2a01:4f8:251:657::2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@guerrillamail.com header.s=highgrade header.b=GCZX1Rd+;
+       spf=pass (google.com: domain of padxzo+9o4ij921zwlro@guerrillamail.com designates 2a01:4f8:251:657::2 as permitted sender) smtp.mailfrom=padxzo+9o4ij921zwlro@guerrillamail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=guerrillamail.com
+Received: by 168.119.142.36 with HTTP; Thu, 02 Sep 2021 11:47:14 +0000
+MIME-Version: 1.0
+Message-ID: <4338142c82a4270c3c0a80cddaefb523cd32@guerrillamail.com>
+Date: Thu, 02 Sep 2021 11:47:14 +0000
+To: "thunderphoenix380@gmail.com" <thunderphoenix380@gmail.com>
+From: <padxzo+9o4ij921zwlro@guerrillamail.com>
+Subject: Fwd:  HELLO
+X-Originating-IP: [180.129.56.54]
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Domain-Signer: PHP mailDomainSigner 0.2-20110415 <http://code.google.com/p/php-mail-domain-signer/>
+DKIM-Signature: v=1; a=rsa-sha256; s=highgrade; d=guerrillamail.com; l=2433;
+	t=1630583235; c=relaxed/relaxed; h=to:from:subject;
+	bh=5tKi+k1GJLnzMot3yPo4eVlCHrSsiY+rvd39012NORQ=;
+	b=GCZX1Rd+EjgsbD6PZEV5mkkTAuD1HWPh9E4uRCSG7Kcx5DDpVzCkK9cVQU4NhFI1PVRFwGmeWTrt
+	BS/6v/Vzz3fv3xCdm0TpJIYoyLsSrCiarQdj8YrwNapwXiPIlnrHL+OiQcRgRD3jIdrRzDCpTfUB
+	JuGF3fgA8fcO4VLYyKlBW7adzJ7noJxBvAUJA4MDfsbOZuVL2UVlXPNEztpC1UuXD9LUIN86ML8p
+	FV388Kta1MjE2A2ljKLpvo8pGr5HBDEb5WySFP9xDg2rugVkkLT5QHJzX2sqDsU8wwdXnfCai8o6
+	N6gNtFtGriS0eyzt5aA7/L7dldbwD76E4lSGvA==
+
+---------- Forwarded message ----------=0AFrom: thunderphoenix380@gmail.com=
+=0ADate: 2021-09-02 11:42:31=0ASubject:  HELLO=0ATo: eoulovem=0ADear Friend=
+ , You made the right decision when you signed up for our club ! We will co=
+mply with all removal requests ! This mail is being sent in compliance with=
+ Senate bill 2516 , Title 9 ; Section 309 . THIS IS NOT MULTI-LEVEL MARKETI=
+NG ! Why work for somebody else when you can become rich in 84 days ! Have =
+you ever noticed nearly every commercial on television has a .com on in it =
+plus the baby boomers are more demanding than their parents ! Well, now is =
+your chance to capitalize on this ! WE will help YOU decrease perceived wai=
+ting time by 140% plus decrease perceived waiting time by 150% ! The best t=
+hing about our system is that it is absolutely risk free for you ! But don'=
+t believe us . Mr Ames who resides in Florida tried us and says "Now I'm ri=
+ch many more things are possible" . We are licensed to operate in all state=
+s . You will blame yourself forever if you don't order now ! Sign up a frie=
+nd and you'll get a discount of 30% ! Thank-you for your serious considerat=
+ion of our offer . Dear Salaryman ; Your email address has been submitted t=
+o us indicating your interest in our newsletter . If you are not interested=
+ in our publications and wish to be removed from our lists, simply do NOT r=
+espond and ignore this mail ! This mail is being sent in compliance with Se=
+nate bill 1916 ; Title 4 ; Section 301 ! This is a ligitimate business prop=
+osal . Why work for somebody else when you can become rich inside 64 months=
+ ! Have you ever noticed people are much more likely to BUY with a credit c=
+ard than cash and the baby boomers are more demanding than their parents . =
+Well, now is your chance to capitalize on this . WE will help YOU sell more=
+ and use credit cards on your website ! You are guaranteed to succeed becau=
+se we take all the risk ! But don't believe us ! Mr Ames of New Jersey trie=
+d us and says "I was skeptical but it worked for me" ! This offer is 100% l=
+egal ! Do not go to sleep without ordering ! Sign up a friend and you'll ge=
+t a discount of 30% . Thank-you for your serious consideration of our offer=
+ .=0A=0A=0A=0A=0A=0A----=0ASent using Guerrillamail.com=0ABlock or report a=
+buse: https://www.guerrillamail.com//abuse/?a=3DVUlhCwkFUaQdhwu6%2BWZMKkTnS=
+seR29sexKtP=0A
+

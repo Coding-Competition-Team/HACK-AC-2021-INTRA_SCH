@@ -1,0 +1,5 @@
+Netcat to get the flag!
+
+`nc `
+
+Author: Lucas

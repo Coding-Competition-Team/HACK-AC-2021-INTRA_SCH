@@ -1,0 +1,9 @@
+The three floor problem
+
+`nc 178.128.85.118 31234`
+
+Mirror:
+
+`nc 165.232.173.222 31234`
+
+Author: Lam

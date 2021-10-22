@@ -1,0 +1,7 @@
+Dear Eve,
+Bob recently joined our company as an intern. Our internet logs has revelated that Bob been communicating with an unknown foreign agent and we suspect that he is leaking sensitive information.
+We were able to capture the pcap traffic and extracted these two files that are of interest. Please have a look.
+Regards,
+Tom
+
+Author: Samuel
