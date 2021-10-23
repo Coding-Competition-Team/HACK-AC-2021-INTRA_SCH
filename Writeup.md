@@ -1,4 +1,4 @@
-# Write up for Hack@AC
+# Write up for Hack@AC Intra-School CTF
 
 ## Crypto
 
