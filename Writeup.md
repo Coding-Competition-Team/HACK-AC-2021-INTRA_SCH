@@ -10,12 +10,9 @@ If you are unfamiliar with Diffie-Hellman key exchange, this [Wikipedia page](ht
 
 ![](images/diffie-hellman.png)
 
-> p= 104711
->
-> g= 104642
->
-> g^a= 1975106301245017026503289083852911126512096109792117074551298200678459015168
->
+> p= 104711  
+> g= 104642  
+> g^a= 1975106301245017026503289083852911126512096109792117074551298200678459015168  
 > g^b= 1504368685604858602888119532110545611422351872
 
 We need to find out the secret values of a and b, before we can find the secret/shared key. As our modulus is relatively small, we can use discrete logarithm to find a and b easily. To do this, you can use this [online discrete logarithm calculator](https://www.alpertron.com.ar/DILOG.HTM). Alternatively, you can use [SageMath](https://www.sagemath.org/).
@@ -23,8 +20,7 @@ We need to find out the secret values of a and b, before we can find the secret/
 ![](images/a.jpg)
 ![](images/b.jpg)
 
-> a: 15
->
+> a: 15  
 > b: 9
 
 After this, we can just use the power operator in python to find the secret key.
