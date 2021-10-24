@@ -39,7 +39,27 @@ The title of the text file implies that the text had been encrypted with XOR. As
 
 Hence, the flag is revealed. `ACSI{eve_is_the_mitm}`
 
+---
+
 ## Forensics
+
+### Corrupted PNG
+
+This is a giveaway challenge. Opening the png in a hex editor, we can see that the file signature IHDR image header is corrupted.
+
+A normal png header would look like this.
+
+![](images/header.jpg)
+
+The header of the corrupted png we were given looks like this.
+
+![](images/header2.jpg)
+
+Manually fix the bytes, and the picture can be viewed.
+
+![](images/headerflag.jpg)
+
+Hence, the flag is `ACSI{headerswillbreakyourhead}`
 
 ## Misc
 
