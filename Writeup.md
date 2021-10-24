@@ -49,11 +49,11 @@ This is a giveaway challenge. Opening the png in a hex editor, we can see that t
 
 A normal png header would look like this.
 
-![](images/header2.jpg)
+![](images/header.jpg)
 
 The header of the corrupted png we were given looks like this.
 
-![](images/header.jpg)
+![](images/header2.jpg)
 
 Manually fix the bytes, and the picture can be viewed.
 
