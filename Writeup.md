@@ -2,6 +2,43 @@
 
 ## Crypto
 
+### ilovemath
+
+We are given a text file and 7z file. In the text file, the public parameters of a Diffie-Hellman key exchange are given. The 7z fle we have is password encrypted. We can assume that the secret key of the Diffie-Hellman key exchange would be the password of the 7z file.
+
+If you are unfamiliar with Diffie-Hellman key exchange this [Wikipedia page](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) provides a good explanation.
+
+![](images/diffie-hellman.png)
+
+> p= 104711
+> g= 104642
+> g^a= 1975106301245017026503289083852911126512096109792117074551298200678459015168
+> g^b= 1504368685604858602888119532110545611422351872
+
+We need to find out the secret values of a and b, before we can find the secret/shared key. As our modulus is relatively small, we can use discrete logarithm to find a and b easily. To do this, you can use this [online discrete logarithm calculator](https://www.alpertron.com.ar/DILOG.HTM). Alternatively, you can use [SageMath](https://www.sagemath.org/).
+
+![](images/a.jpg)
+![](images/b.jpg)
+
+> a: 15
+> b: 9
+
+After this, we can just use the power operator in python to find the secret key.
+
+> pow(g, a*b, p)
+
+![](images/pow.jpg)
+
+We can now key in the password for the 7z file, which opens a text file titled `howdoesxorwork.txt` which contains the following text
+
+> B@PJxfuf\jp\wkf\njwn~
+
+The title of the text file implies that the text had been encrypted with XOR. As no other clues are given, we can try to brute force. Cyberchef XOR bruteforce can be used in this case.
+
+![](images/xorbruteforce.jpg)
+
+Hence, the flag is revealed. `ACSI{eve_is_the_mitm}`
+
 ## Forensics
 
 ## Misc
