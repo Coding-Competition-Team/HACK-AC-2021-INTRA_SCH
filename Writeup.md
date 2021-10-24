@@ -42,7 +42,7 @@ This is the main page of the Kool Kids Klub website.
 
 On clicking the button, it leads to this. claiming I am a normie.
 
-![Screenshot of page](images/kookids2.png "normie")
+![Screenshot of page](images/koolkids2.png "normie")
 
 The verification seems to be some sort of JWT authentication, as shown by the cookie `auth:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJrb29sIjoiRmFsc2UifQ.vit2I6fcXICDOGMWD_jOA9eOtBPlGVnCA4l0HYcVQ4U` in the client session.
 
