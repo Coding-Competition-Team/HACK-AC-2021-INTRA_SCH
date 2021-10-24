@@ -2,6 +2,36 @@
 
 ## Crypto
 
+### 154
+
+The encoded flag is as follows: `HBJDG5TIM4ZWITCVK5RTCWDJOVGWOUKUIFREEVKII5CEMY2NOJYGG===`
+
+Notice the `===` at the back of the encoded text. This should be immediately recognized as Basex encoding. If you didn't notice this, it's okay, just paste it in Cyberchef and press the magic wand to automatically decode it.
+
+![Cyberchef](images/1541.png)
+
+This gets us the flag, `ACSI{k1nd4_b45ed}`.
+
+---
+
+### Big Mac
+
+A chunk of text is provided, possibly encrypted. From the description, it can be deduced that the Mono-Alphabetic Cipher is being used. To decrypt it, one can just dump the ciphertext provided into a [MAC bruteforcer](https://www.dcode.fr/monoalphabetic-substitution), and scan through the plaintext for the flag, `ACSI{g3tt1ng_t0_m4c5}`.
+
+---
+
+### ezpz
+
+The description tells us to use Cyberchef, so let's be good and do exactly that. Cyberchef's magic wand helpfully identifies Base64 and we get this: `NPFV{1ap3cgvba}`.
+
+![Cyberchef](images/ezpz1.png)
+
+As one can probably tell, it's already in the flag format. Possibly it's been shifted similar to a Caesar cipher or ROTx method, so counting the shift from `ACSI --> NPFV`, we can deduce that it is ROT13-encoded. Thus, using Cyberchef's built-in ROT13 recipe, we can obtain the flag, `ACSI{1nc3ption}`.
+
+![Cyberchef](images/ezpz2.png)
+
+---
+
 ### ilovemath
 
 We are given a text file and 7z file. In the text file, the public parameters of a Diffie-Hellman key exchange are given. The 7z fle we have is password encrypted. We can assume that the secret key of the Diffie-Hellman key exchange would be the password of the 7z file.
@@ -38,6 +68,33 @@ The title of the text file implies that the text had been encrypted with XOR. As
 ![](images/xorbruteforce.jpg)
 
 Hence, the flag is revealed. `ACSI{eve_is_the_mitm}`
+
+---
+
+### wEak
+
+This seems to be an RSA challenge, and we are given c, e and n. Since c = m<sup>e</sup> mod n, it also holds true that m = c<sup>1/e</sup> if m<sup>e</sup> < n. In English, this means that you can simply take the third root of c to get m, if m<sup>e</sup> is smaller than n. The challenge seems to hint towards that, what with the capital Es everywhere. Thus, let's try exactly that. However, Python doesn't give us the exact value of large integers, so we will have to use the built-in `Decimal` module in Python. [PyCryptodome](https://pycryptodome.readthedocs.io/en/latest/) is used to convert long to bytes. Below is the script (same directory as `wEak.txt`) to perform the cube-root attack:
+
+```python
+from Crypto.Util.number import *
+from decimal import *
+
+# Specifies the precision
+getcontext().prec = 2000
+
+with open('wEak.txt') as file:
+  a = file.readlines()
+
+# Parse c from wEak.txt
+c = a[0][4:]
+
+# Perform the calculations
+m = long_to_bytes(Decimal(c) ** (Decimal(1) / Decimal(3)))
+
+print(m)
+```
+
+This gives us the output `b'ACSI{wE4k_Exp0nEn7|'`, which is poorly formatted due to some obscure Python bug (I think). Just fix the vertical bar to a '}' and all should be fine. Flag: `ACSI{wE4k_Exp0nEn7}`
 
 ---
 
