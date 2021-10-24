@@ -34,6 +34,8 @@ Disallow: /n0-bot5.txt
 
 Next, one should attempt to navigate to `n0-bot5.txt`, where the flag, `ACSI{re4lly_l0n3ly...}`, can be found.
 
+---
+
 ### [Kool Kids Klub](http://159.223.66.67:5003/)
 
 This is the main page of the Kool Kids Klub website.
@@ -58,6 +60,8 @@ To become kool, we simply change it to `kool:True` and `alg:none` (though this w
 
 as well as the flag `ACSI{wh3re_4re_th3_k00l_kid5???}`.
 
+---
+
 ### [Quote](http://159.223.66.67:5001/)
 
 The first thing we see is a quote, as follows:
@@ -72,6 +76,8 @@ Sending a POST request to the site via [https://reqbin.com/](https://reqbin.com/
 
 ![reqbin](images/quote3.png)
 
+---
+
 ### [Red Flag](http://159.223.66.67:5002/)
 
 This one appears to be a file viewer, with many *red flags*. This is the page that greets us on startup:
@@ -85,3 +91,5 @@ Following the prompt, we can enter `image_1.png` to view the image, a red flag.
 ~~If you haven't noticed any file that has the extension .png will lead to this image lmao~~
 
 Anyway, this is an obvious form of directory traversal, and we can obtain our flag via `../../../../../../../../flag.txt`, which gives us our flag, `ACSI{ed1bl3}`.
+
+---
