@@ -187,6 +187,7 @@ print(a)
 ```
 
 This yields the flag, `ACSI{wh00sh}`.
+
 ---
 
 ### Hashcat 100
@@ -267,12 +268,12 @@ This is just another flag checker challenge. We know that the flag format is `AC
 Incomplete flag: `ACSI{-1f3_1s_s-Ag}`. No other information is given on the last 2 letters. Since flags should resemble words, the first letter can either be 'l' or 'w'. The second letter can be 'h', 'l', 'n' or 'w'. Sorry for the guessy challenge, but you have a total of 8 different flags to guess.
 
 ---
- 
+
 ## Scripting
 
 ### Random SHA512 Algorithm
 
-We are provided with some numbers as well as a list of 10,000 hashes. The script used to generate the hashes is as follows:
+We are provided with some numbers as well as a list of 9,999 hashes. The script used to generate the hashes is as follows:
 
 ``` Python
 import random
@@ -418,6 +419,6 @@ Following the prompt, we can enter `image_1.png` to view the image, a red flag.
 
 ~~If you haven't noticed any file that has the extension .png will lead to this image lmao~~
 
-Anyway, this is an obvious form of directory traversal, and we can obtain our flag via `../../../../../../../../flag.txt`, which gives us our flag, `ACSI{ed1bl3}`.
+Anyway, this is an obvious form of directory traversal, and we can obtain our flag via `../../../../../../../../flag.txt`, or even simpler, `/flag.txt`, which gives us our flag, `ACSI{ed1bl3}`.
 
 ---
