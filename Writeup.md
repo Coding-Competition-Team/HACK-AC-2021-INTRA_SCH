@@ -152,6 +152,8 @@ Most people have not come across this thing before and needed prompting to Googl
 
 Inputting in to decoder will get `ACSI{thisflagisnotspam}`.
 
+---
+
 ## OSINT
 
 ## Pwn
