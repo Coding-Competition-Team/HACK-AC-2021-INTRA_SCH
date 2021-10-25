@@ -145,6 +145,13 @@ And then searching for this name on Instagram gives us a profile with the flag.
 
 ## Misc
 
+### Spam
+
+This challenge is simple. Just extract the message from the EML file and input it into the decoder on [Spam Mimic](https://www.spammimic.com/index.cgi).  
+Most people have not come across this thing before and needed prompting to Google.
+
+Inputting in to decoder will get `ACSI{thisflagisnotspam}`.
+
 ## OSINT
 
 ## Pwn
