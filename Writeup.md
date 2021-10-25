@@ -118,6 +118,27 @@ Manually fix the bytes, and the picture can be viewed.
 
 Hence, the flag is `ACSI{headerswillbreakyourhead}`
 
+---
+
+### Ice Cream
+
+We have a pcapng file. Open using Wireshark. We can see that a file called message for ice cream vendor.docx is being transferred over FTP.
+
+![](images/ft1.jpg)
+
+FTP-DATA indicates that it is the packet that contains the transferred document.  
+Following the TCP stream, we can view the raw data and save it as a .docx file.
+
+![](images/ft2.jpg)
+
+The message in the docx file gives us a hint to look at the metadata of the file, and that there is a Instagram profile involved.
+
+![](images/igpage.jpg)
+
+And then searching for this name on Instagram gives us a profile with the flag.
+
+![](images/igpage2.jpg)
+
 ## Misc
 
 ## OSINT
