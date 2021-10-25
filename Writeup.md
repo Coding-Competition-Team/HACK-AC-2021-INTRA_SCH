@@ -124,7 +124,7 @@ This gives us the output `b'ACSI{wE4k_Exp0nEn7|'`, which is poorly formatted due
 
 ### Corrupted PNG
 
-This is a giveaway challenge. Opening the png in a hex editor, we can see that the file signature IHDR image header is corrupted.
+This is a giveaway challenge. Opening the png in a hex editor, we can see that the file signature and IHDR image header is corrupted.
 
 A normal png header would look like this.
 
@@ -227,12 +227,12 @@ A social media handle is given. Searching for the account on Instagram, we find 
 
 ### Sneaky Part 2
 
-Now we have to find the postal code of the place of interest. From the captions on his last post, we know that he is trying to find a gym. Rock climbing gyms should be considered as he is a "professional rock climber". Now, we can start to mark out the places that he has visited based on his posts. So we have National Art Gallery, Old Hill Street Police Station, St. Andrews Cathedral, Raffles Terrence, and Clark Quay. Now, we can use the sacred circle method to try to define our area of search.
+Now we have to find the postal code of the place of interest. From the captions on his last post, we know that he is trying to find a gym. Now, we can start to mark out the places that he has visited based on his posts. So we have National Art Gallery, Old Hill Street Police Station, St. Andrews Cathedral, Raffles Terrence, and Clark Quay. Now, we can use the sacred circle method to try to define our area of search.
 
 It would look something like this.  
 ![](images/downtown.jpg)
 
-Drawing circles around the places the John visited, we can see that most of the circles over lap in the area defined by the green circle. This allows us guess that Funan is the place that has a gym.  
+Drawing circles around the places the John visited, we can see that most of the circles overlap in the area defined by the green circle. This allows us guess that Funan is the place that has a gym.  
 Alternatively, we also know that John is a professional rock climber. If we know that there is a rock climbing gym in Funan, we can also guess that the building of interest is Funan.
 
 Funan's postal code is 179105, hence our flag is `ACSI{179105}`.
