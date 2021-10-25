@@ -118,9 +118,49 @@ Manually fix the bytes, and the picture can be viewed.
 
 Hence, the flag is `ACSI{headerswillbreakyourhead}`
 
+---
+
+### Ice Cream
+
+We have a pcapng file. Open using Wireshark. We can see that a file called message for ice cream vendor.docx is being transferred over FTP.
+
+![](images/ft1.jpg)
+
+FTP-DATA indicates that it is the packet that contains the transferred document.  
+Following the TCP stream, we can view the raw data and save it as a .docx file.
+
+![](images/ft2.jpg)
+
+The message in the docx file gives us a hint to look at the metadata of the file, and that there is a Instagram profile involved.
+
+![](images/igpage.jpg)
+
+And then searching for this name on Instagram gives us a profile with the flag.
+
+![](images/igpage2.jpg)
+
+`ACSI{shark_eats_icecream}`
+
+---
+
 ## Misc
 
+### Spam
+
+This challenge is simple. Just extract the message from the EML file and input it into the decoder on [Spam Mimic](https://www.spammimic.com/index.cgi).  
+Most people have not come across this thing before and needed prompting to Google.
+
+Inputting in to decoder will get `ACSI{thisflagisnotspam}`.
+
+---
+
 ## OSINT
+
+### Sneaky Part 1
+
+A social media handle is given. Searching for the account on Instagram, we find this account. In one of the posts, we see a boarding pass, with destination WSSS, which is Singapore Changi Airport. Kind of guessy, but flag is `ACSI{Changi}`
+
+---
 
 ## Pwn
 
