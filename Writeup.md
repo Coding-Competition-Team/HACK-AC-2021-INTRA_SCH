@@ -1,5 +1,25 @@
 # Write up for Hack@AC Intra-School CTF
 
+## Table of contents
+
+[Crypto](#crypto)
+
+[Forensics](#forensics)
+
+[Misc](#misc)
+
+[OSINT](#osint)
+
+[Pwn](#pwn)
+
+[RE](#re)
+
+[Scripting](#scripting)
+
+[Steganography](#steganography)
+
+[Web](#web)
+
 ## Crypto
 
 ### 154
@@ -220,6 +240,34 @@ Funan's postal code is 179105, hence our flag is `ACSI{179105}`.
 
 ## RE
 
+### Fleck Chag
+
+This is just another flag checker challenge. We know that the flag format is `ACSI{...}`. Let's go through if-statement by if-statement.
+
+`if len(flag) !=  int(flag[8]) * 6:` This tells us that the length of the flag is a multiple of 6. 12 and 18 are feasible lengths, 24 seems a little too long. 6 is just way too short.
+
+`elif flag[4] != '{':` This confirms that the flag format is part of the flag checking service.
+
+`elif flag[0] != flag[-3]:` This tells us that `flag[-3] == 'A'`, which will be useful later on once we can confirm the length.
+
+`elif flag[6] != flag[-8]:` Another wildcard, we can't confirm anything yet.
+
+`elif flag[2].lower() != flag[-5] and flag[13] != flag[11]:` This tells us that `flag[-5] == 's'`. More importantly, it basically confirms that the flag is 18 chars long. Also, `flag[8] == '3'`.
+
+`elif flag.index("f") != 7:` Our first letter given, the 8th character is 'f'. So far, our flag is `ACSI{-*f3-*s-s-A-}`. (* marks characters which are the same but unconfirmed as of yet)
+
+`elif flag[9] != "_" and flag[-6] != "_":` This provides the positions of the 2 underscores in the flag. `ACSI{-*f3_*s_s-A-}`
+
+`elif flag[-2] != 'g':` --> `ACSI{-*f3_*s_s-Ag}`
+
+`elif int(flag[8]) + int(flag[-8]) != 4:` Since we know `int(flag[8]) = 3`, `flag[-8] == flag[6] == '1'`. `ACSI{-1f3_1s_s-Ag}`
+
+`elif flag.index('s') != flag.index('f') + flag.index('{'):` This just serves as confirmation that you are on the right track. Since 11 (index of 1st occurrence of 's') == 7 + 4, we are correct.
+
+Incomplete flag: `ACSI{-1f3_1s_s-Ag}`. No other information is given on the last 2 letters. Since flags should resemble words, the first letter can either be 'l' or 'w'. The second letter can be 'h', 'l', 'n' or 'w'. Sorry for the guessy challenge, but you have a total of 8 different flags to guess.
+
+---
+ 
 ## Scripting
 
 ### Random SHA512 Algorithm
