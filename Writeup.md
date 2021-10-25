@@ -145,6 +145,46 @@ And then searching for this name on Instagram gives us a profile with the flag.
 
 ## Misc
 
+### 0_##.zip
+
+This appears to be a zip bomb challenge. We are given a zip file that seems to be recursively zipped. Script to unzip as follows:
+
+```Python
+import zipfile
+import os
+for i in range(1, 100):
+  with zipfile.ZipFile('0_'+str(i)+'.zip', 'r') as zip:
+    if i != 99:
+      zip.extract('0_'+str(i+1)+'.zip')
+    else:
+      zip.extract('flag.txt')
+    os.remove('0_'+str(i-1)+'.zip')
+
+with open('flag.txt') as file:
+  a = file.read()
+
+print(a)
+```
+
+This yields the flag, `ACSI{wh00sh}`.
+---
+
+### Hashcat 100
+
+This is just a simple hashcat challenge. Command for hashcat as follows:
+
+`hashcat.exe -m 0 -a 3 hash.txt ?a?a?a?a?a`
+
+Breakdown: `-m 0` specifies the hash type as MD5. `-a 3` specifies the attack mode to be bruteforce/mask. `hash.txt` loads the hash, depending on where your hash is stored. `?a?a?a?a?a` is the mask that we will use to crack the hash, which tries all lowercase, uppercase, decimal and symbol characters. This yields the plaintext `CraSh`. Wrap this with ACSI{} to get `ACSI{CraSh}`.
+
+---
+
+### Sanity Check
+
+Open a ticket in the discord. Flag: `ACSI{w3lcom3_to_H4CK@AC}`
+
+---
+
 ### Spam
 
 This challenge is simple. Just extract the message from the EML file and input it into the decoder on [Spam Mimic](https://www.spammimic.com/index.cgi).  
@@ -204,7 +244,7 @@ for i in range(1, 10000):
         break
 ```
 
-This yields the string `p962353971624266972455319213868077726366609538581374822006171q371530745565212682103475064601401364910938176445787832647171e65537`, which is our anomaly. As the name suggests, RSA might be a key component here, and this is confirmed by the occurrence of p, q and e. Afterwards, it's just simple textbook RSA as we are given p and q already. To get the flag, one might write a script as follows:
+This yields the string `p962353971624266972455319213868077726366609538581374822006171q371530745565212682103475064601401364910938176445787832647171e65537`, which is our anomaly. As the name suggests, RSA might be a key component here, and this is confirmed by the occurrence of p, q and e. Afterwards, it's just simple textbook RSA since we are given p and q already. To get the flag, one might write a script as follows:
 
 ```python
 from Crypto.Util.number import long_to_bytes
@@ -223,7 +263,7 @@ m = long_to_bytes(pow(c, d, n))
 
 print(m)
 ```
-This gives us the flag, `Y12021{really_sneaky_asym}`. Note that the flag format is different cos I reused this apprently *really hard* chall that no one solved in our internal CTF... but that shouldn't be an issue.
+This gives us the flag, `Y12021{really_sneaky_asym}`. Note that the flag format is different cos I reused this apprently *really hard* chall that no one solved in our internal CTF ~~and forgot to change the flag~~... but that shouldn't be an issue.
 
 ---
 
