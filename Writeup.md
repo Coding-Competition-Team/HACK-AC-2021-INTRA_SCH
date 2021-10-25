@@ -198,7 +198,21 @@ Inputting in to decoder will get `ACSI{thisflagisnotspam}`.
 
 ### Sneaky Part 1
 
-A social media handle is given. Searching for the account on Instagram, we find this account. In one of the posts, we see a boarding pass, with destination WSSS, which is Singapore Changi Airport. Kind of guessy, but flag is `ACSI{Changi}`
+A social media handle is given. Searching for the account on Instagram, we find this account. In one of the posts, we see a boarding pass, with destination WSSS, which is Singapore Changi Airport. Kind of guessy, but flag is `ACSI{Changi}`.
+
+---
+
+### Sneaky Part 2
+
+Now we have to find the postal code of the place of interest. From the captions on his last post, we know that he is trying to find a gym. Rock climbing gyms should be considered as he is a "professional rock climber". Now, we can start to mark out the places that he has visited based on his posts. So we have National Art Gallery, Old Hill Street Police Station, St. Andrews Cathedral, Raffles Terrence, and Clark Quay. Now, we can use the sacred circle method to try to define our area of search.
+
+It would look something like this.  
+![](images/downtown.jpg)
+
+Drawing circles around the places the John visited, we can see that most of the circles over lap in the area defined by the green circle. This allows us guess that Funan is the place that has a gym.  
+Alternatively, we also know that John is a professional rock climber. If we know that there is a rock climbing gym in Funan, we can also guess that the building of interest is Funan.
+
+Funan's postal code is 179105, hence our flag is `ACSI{179105}`.
 
 ---
 
@@ -268,6 +282,19 @@ This gives us the flag, `Y12021{really_sneaky_asym}`. Note that the flag format 
 ---
 
 ## Steganography
+
+### Mario
+
+We are given a png file with the description, `Mario feels rather insignificant today`. This is a clue that information is hidden in the seemingly normal image by using the LSB technique.
+
+Participants can write their own python script to solve this challenge, ~~or just download a script from github or use an online tool like [this](https://stylesuxx.github.io/steganography/)~~.
+
+---
+
+### Mad World
+
+
+---
 
 ## Web
 
