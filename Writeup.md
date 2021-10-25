@@ -76,7 +76,7 @@ Hence, the flag is revealed. `ACSI{eve_is_the_mitm}`
 This seems to be an RSA challenge, and we are given c, e and n. Since c = m<sup>e</sup> mod n, it also holds true that m = c<sup>1/e</sup> if m<sup>e</sup> < n. In English, this means that you can simply take the third root of c to get m, if m<sup>e</sup> is smaller than n. The challenge seems to hint towards that, what with the capital Es everywhere. Thus, let's try exactly that. However, Python doesn't give us the exact value of large integers, so we will have to use the built-in `Decimal` module in Python. [PyCryptodome](https://pycryptodome.readthedocs.io/en/latest/) is used to convert long to bytes. Below is the script (same directory as `wEak.txt`) to perform the cube-root attack:
 
 ```python
-from Crypto.Util.number import *
+from Crypto.Util.number import long_to_bytes, bytes_to_long
 from decimal import *
 
 # Specifies the precision
@@ -127,6 +127,65 @@ Hence, the flag is `ACSI{headerswillbreakyourhead}`
 ## RE
 
 ## Scripting
+
+### Random SHA512 Algorithm
+
+We are provided with some numbers as well as a list of 10,000 hashes. The script used to generate the hashes is as follows:
+
+``` Python
+import random
+import hashlib
+
+h=''
+random.seed(3)
+
+for i in range(1, 10000):
+    if i == 87:
+        h += 'p962353971624266972455319213868077726366609538581374822006171q371530745565212682103475064601401364910938176445787832647171e65537\n'
+        break
+    h += hashlib.sha512(bytes(random.randint(1, i))).hexdigest()+'\n'
+with open("random.txt", "w") as f:
+    f.write(h)
+```
+
+However, participants are not given this script. Thus, to parse this, they are required to write their own script. An example script that can solve the challenge is as follows:
+
+```Python
+import hashlib
+import random
+random.seed(3)
+with open("random_sha512_anomaly.txt") as f:
+    lst = f.read().splitlines()
+for i in range(1, 10000):
+    h = hashlib.sha512(bytes(random.randint(1, i))).hexdigest()
+    if str(h) != str(lst[i-1]):
+        print(str(h))
+        print(lst[i-1])
+        break
+```
+
+This yields the string `p962353971624266972455319213868077726366609538581374822006171q371530745565212682103475064601401364910938176445787832647171e65537`, which is our anomaly. As the name suggests, RSA might be a key component here, and this is confirmed by the occurrence of p, q and e. Afterwards, it's just simple textbook RSA as we are given p and q already. To get the flag, one might write a script as follows:
+
+```python
+from Crypto.Util.number import long_to_bytes
+
+# Initial declaration
+c = 165119199922105794768978164576731828113693801657072359161278043838210629526501851742829838893770341337395913834665783424
+p = 962353971624266972455319213868077726366609538581374822006171
+q = 371530745565212682103475064601401364910938176445787832647171
+e = 65537
+
+# Math
+n = p*q
+t = (p-1) * (q-1)
+d = pow(e, -1, t)
+m = long_to_bytes(pow(c, d, n))
+
+print(m)
+```
+This gives us the flag, `Y12021{really_sneaky_asym}`. Note that the flag format is different cos I reused this apprently *really hard* chall that no one solved in our internal CTF... but that shouldn't be an issue.
+
+---
 
 ## Steganography
 
