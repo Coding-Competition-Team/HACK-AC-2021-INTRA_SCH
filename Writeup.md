@@ -352,7 +352,9 @@ We get some code in Brainf*ck. Throwing it into a decoder, we get this.
 
 >thisisnottheflagbutwhatisit?
 
-It seems like we have to try something else now. The challenge description makes a reference to Xiao steganography. Loading the wav file into the application, we can see that there is indeed a hidden file named `madworldflag.txt`. However, a password is required to successfully extract the file. The previous string that we have, `thisisnottheflagbutwhatisit?`, seems to be the password. However, there seems to be a limit to the length of the password. Hence, we try `thisisnottheflag`, and it is successful. The test file reveals more Brainf*ck code. Decoding it, we get our flag, `ACSI{in_between_funny_and_sad}`.
+It seems like we have to try something else now. The challenge description makes a reference to Xiao steganography. Loading the wav file into the application, we can see that there is indeed a hidden file named `madworldflag.txt`. However, a password is required to successfully extract the file. The previous string that we have, `thisisnottheflagbutwhatisit?`, seems to be the password. However, there seems to be a limit to the length of the password. Hence, we try `thisisnottheflag`, and it is successful.  
+
+The test file reveals more Brainf*ck code. Decoding it, we get our flag, `ACSI{in_between_funny_and_sad}`.
 
 ---
 
