@@ -139,6 +139,10 @@ And then searching for this name on Instagram gives us a profile with the flag.
 
 ![](images/igpage2.jpg)
 
+`ACSI{shark_eats_icecream}`
+
+---
+
 ## Misc
 
 ## OSINT
