@@ -160,6 +160,8 @@ Inputting in to decoder will get `ACSI{thisflagisnotspam}`.
 
 A social media handle is given. Searching for the account on Instagram, we find this account. In one of the posts, we see a boarding pass, with destination WSSS, which is Singapore Changi Airport. Kind of guessy, but flag is `ACSI{Changi}`
 
+---
+
 ## Pwn
 
 ## RE
