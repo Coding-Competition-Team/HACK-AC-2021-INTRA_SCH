@@ -243,6 +243,19 @@ This gives us the flag, `Y12021{really_sneaky_asym}`. Note that the flag format 
 
 ## Steganography
 
+### Mario
+
+We are given a png file with the description, `Mario feels rather insignificant today`. This is a clue that information is hidden in the seemingly normal image by using the LSB technique.
+
+Participants can write their own python script to solve this challenge, ~~or just download a script from github or use an online tool like [this](https://stylesuxx.github.io/steganography/)~~.
+
+---
+
+### Mad World
+
+
+---
+
 ## Web
 
 ### [Deserted](http://159.223.66.67:5000/)
